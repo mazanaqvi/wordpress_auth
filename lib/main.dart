@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:wordpress_api/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,7 +12,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Word to HTML',
       theme: ThemeData(
@@ -35,8 +37,10 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text('Wordpress and woocomerce'),
       ),
-      body: const Center(
-        child: Text('Hello World'),
+      body: Center(
+        child: ElevatedButton(
+            onPressed: () => {Get.to(Login(title: "Login"))},
+            child: const Text('Login to Wordpress')),
       ),
     );
   }
